@@ -1,0 +1,382 @@
+.search-result-spirit {
+  background-color: #222;
+  color: white;
+  width: 40rem;
+  height: 70rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 4rem;
+  box-shadow: 0 0 10px 5px rgba(38, 36, 36, 0.371);
+
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-result-talisman {
+  background-color: #222;
+  color: white;
+  width: 40rem;
+  height: 55rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 4rem;
+  box-shadow: 0 0 10px 5px rgba(38, 36, 36, 0.371);
+
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-result-ashes {
+  background-color: #222;
+  color: white;
+  width: 40rem;
+  height: 70rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 4rem;
+  box-shadow: 0 0 10px 5px rgba(38, 36, 36, 0.371);
+
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-result-boss {
+  background-color: #222;
+  color: white;
+  width: 40rem;
+  height: 80rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 4rem;
+  box-shadow: 0 0 10px 5px rgba(38, 36, 36, 0.371);
+
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.result-img-box-spirit {
+  width: 100%;
+  height: 40%;
+  border-bottom: 1px solid #999;
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  overflow: hidden;
+}
+
+.result-img-creature {
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.result-img-creature:hover {
+  transform: scale(1.1);
+}
+
+.result-img-spirit {
+  width: 60%;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.result-img-spirit:hover {
+  transform: scale(1.1);
+}
+
+.result-img-ash {
+  width: 70%;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.result-img-ash:hover {
+  transform: scale(1.1);
+}
+
+.spirit-name {
+  width: 100%;
+  height: 5%;
+  border-bottom: 1px solid #999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+}
+
+.name {
+  font-size: 2rem;
+  padding-bottom: 2rem;
+}
+
+.name-npcs {
+  text-align: center;
+  font-size: 2rem;
+  padding-bottom: 2rem;
+}
+
+.boss-health {
+  width: 100%;
+  height: 5%;
+  border-bottom: 1px solid #999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  padding-bottom: 3rem;
+  margin-bottom: 2rem;
+}
+
+.health {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.result-information-spirit {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+  padding: 0 1rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #999;
+  width: 100%;
+  height: 10%;
+}
+
+.result-information-ash {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+  padding: 0 1rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #999;
+  width: 100%;
+  height: 8%;
+}
+
+.result-information-boss {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+  padding: 0 1rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #999;
+  width: 100%;
+  height: 20%;
+}
+
+.result-property {
+  text-transform: uppercase;
+}
+
+.fp-cost {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.location {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.boss-drops {
+  width: 100%;
+  height: 30%;
+  border-bottom: 1px solid #999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 1;
+  padding: 2rem 1rem;
+}
+
+.cost {
+  text-transform: uppercase;
+  padding-right: 0.5rem;
+}
+
+.result-info-spirits {
+  font-size: 1.8rem;
+}
+
+.spirit-flex {
+  width: 12rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hp-cost {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.effect-spirit {
+  width: 100%;
+  height: 10%;
+  border-bottom: 1px solid #999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.effect-talisman {
+  width: 100%;
+  height: 15%;
+  border-bottom: 1px solid #999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 1rem;
+  padding-bottom: 3rem;
+}
+
+.effect-item {
+  width: 100%;
+  height: 10%;
+  border-bottom: 1px solid #999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 1rem;
+  padding-bottom: 3rem;
+}
+
+.result-effect-spirit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.result-effect {
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.result-info-spirit {
+  font-size: 1.8rem;
+}
+
+.result-item_description-spirit {
+  align-self: center;
+  background-color: #333;
+  height: 40%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-style: italic;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.result-item_description-ash {
+  align-self: center;
+  background-color: #333;
+  height: 35%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-style: italic;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.result-item_description-item {
+  align-self: center;
+  background-color: #333;
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-style: italic;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.result-item_description-boss {
+  align-self: center;
+  background-color: #333;
+  height: 25%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-style: italic;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.result-item_description-talisman {
+  align-self: center;
+  background-color: #333;
+  height: 40%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-style: italic;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.quotes-top {
+  margin-right: 1rem;
+}
+
+.quotes-bottom {
+  margin-left: 1rem;
+}

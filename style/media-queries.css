@@ -1,0 +1,132 @@
+@media (max-width: 89rem) {
+  html {
+    font-size: 56%;
+  }
+}
+
+@media (max-width: 80rem) {
+  html {
+    font-size: 45%;
+  }
+}
+
+@media (max-width: 63.5rem) {
+  html {
+    font-size: 40%;
+  }
+
+  .to-the-top-button {
+    bottom: 20;
+    right: 30;
+  }
+}
+
+@media (max-width: 58rem) {
+  html {
+    font-size: 30%;
+  }
+
+  .section-hero {
+    background-position: right 25% bottom 45%;
+    gap: 15rem;
+  }
+
+  .header-logo {
+    font-size: 4rem;
+  }
+
+  .nav-item_link {
+    font-size: 3rem;
+  }
+
+  .introduction {
+    font-size: 5rem;
+    line-height: 10rem;
+  }
+}
+
+@media (max-width: 43rem) {
+  html {
+    font-size: 25%;
+  }
+
+  .section-hero {
+    background-position: right 30% bottom 45%;
+    gap: 20rem;
+  }
+
+  .to-the-top-button {
+    bottom: 20;
+    right: 20;
+  }
+
+  .header-logo {
+    font-size: 5rem;
+  }
+
+  .nav-item_link {
+    font-size: 4rem;
+  }
+
+  .introduction {
+    font-size: 6rem;
+    line-height: 10rem;
+  }
+
+  .button-wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 35.5rem) {
+  html {
+    font-size: 20%;
+  }
+
+  .section-hero {
+    background-position: right 33% bottom 45%;
+    gap: 25rem;
+  }
+
+  .header-logo {
+    font-size: 6rem;
+  }
+
+  .nav-item_link {
+    font-size: 5rem;
+  }
+
+  .introduction {
+    font-size: 8rem;
+    line-height: 12rem;
+  }
+}
+
+@media (max-width: 28.75rem) {
+  html {
+    font-size: 15%;
+  }
+
+  .section-hero {
+    background-position: right 35% bottom 45%;
+    gap: 30rem;
+  }
+
+  .to-the-top-button {
+    bottom: 20;
+    right: 10;
+  }
+
+  .header-logo {
+    font-size: 7rem;
+  }
+
+  .nav-item_link {
+    font-size: 6rem;
+  }
+
+  .introduction {
+    font-size: 9rem;
+    line-height: 14rem;
+  }
+}

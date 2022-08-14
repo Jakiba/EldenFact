@@ -1,0 +1,20 @@
+{
+  "name": "eldenfact",
+  "version": "1.0.0",
+  "description": "find all infos about Elden Ring!",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Jakob Ibrahim",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.6.2"
+  },
+  "dependencies": {
+    "core-js": "^2.6.5",
+    "core.js": "^0.4.2",
+    "regenerator-runtime": "^0.13.9"
+  }
+}

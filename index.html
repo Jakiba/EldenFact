@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="style/style.css" rel="stylesheet" />
+    <link href="style/media-queries.css" rel="stylesheet" />
+    <script type="module" src="src/controller.js"></script>
+    <title>EldenFact</title>
+  </head>
+  <body>
+    <!-- WHOLE HERO - SECTION -->
+    <div class="section-hero">
+      <header class="header">
+        <a class="header-logo" href="#">EldenFact</a>
+
+        <button class="dark-light-mode">
+          <div class="light"></div>
+          <div class="dark"></div>
+        </button>
+
+        <nav class="navbar">
+          <ul class="nav-items">
+            <li class="nav-item"><a href="#" class="nav-item_link">Home</a></li>
+            <li class="nav-item">
+              <a
+                href="https://github.com/Jakiba"
+                target="_blank"
+                class="nav-item_link"
+                >About Me</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="introduction">
+        <h3 class="intro-text">
+          find informtion to everything Elden Ring has to offer! Wether enemies,
+          weapons, armor or more, you will find it here!
+        </h3>
+      </div>
+
+      <button class="to-the-top-button">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="to-the-top-icon"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M5 10l7-7m0 0l7 7m-7-7v18"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <div class="button-wrapper">
+      <button class="button-show">sorceries</button>
+      <button class="button-show">incantations</button>
+      <button class="button-show">spirits</button>
+      <button class="button-show">locations</button>
+      <button class="button-show">classes</button>
+      <button class="button-show">creatures</button>
+      <button class="button-show">bosses</button>
+      <button class="button-show">talismans</button>
+      <button class="button-show">items</button>
+      <button class="button-show">ammos</button>
+      <button class="button-show">npcs</button>
+      <button class="button-show">shields</button>
+      <button class="button-show">weapons</button>
+      <button class="button-show">armors</button>
+      <button class="button-show">ashes</button>
+    </div>
+
+    <div class="form-container">
+      <form class="search">
+        <input
+          id="quotes-search"
+          type="search"
+          placeholder="category, search-term (weapons, sword)"
+          name="quotes-search"
+        />
+      </form>
+    </div>
+
+    <div class="spinner"></div>
+
+    <div class="error-container"></div>
+
+    <!-- RESULT - CARD -->
+    <main class="results-container">
+      <div class="results"></div>
+    </main>
+  </body>
+</html>
