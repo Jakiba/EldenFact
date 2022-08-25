@@ -23,7 +23,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2rem;
 
   overflow: hidden;
 }
@@ -47,6 +46,7 @@
   align-items: center;
   padding: 2rem 1rem;
   margin-bottom: 2rem;
+  gap: 1rem;
 }
 
 .name {

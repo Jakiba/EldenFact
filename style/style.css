@@ -22,7 +22,7 @@ body {
 }
 
 .light-mode {
-  background-color: rgb(223, 222, 222);
+  background-color: #999;
 }
 
 /* ////////////////////////////////////////////////////////// */
@@ -149,6 +149,13 @@ body {
 
 .nav-item_link:hover::after {
   left: 0;
+}
+
+.help {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 /* ////////////////////////////////////////////////////////// */
@@ -327,7 +334,7 @@ body {
 .search-result-classes {
   background-color: #222;
   color: white;
-  max-width: 40rem;
+  width: 40rem;
   height: 80rem;
   margin: 0 auto;
   display: flex;
@@ -429,8 +436,6 @@ body {
 
 .result-information-locations {
   display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
   justify-content: center;
   gap: 1rem;
   font-size: 1.5rem;
@@ -466,6 +471,11 @@ body {
   height: 40%;
 }
 
+.classes-name-bookmark {
+  display: flex;
+  gap: 1rem;
+}
+
 .result-effect {
   display: flex;
   gap: 0.5rem;
@@ -480,7 +490,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
 }
 
 .result-name-format {

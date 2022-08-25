@@ -2,17 +2,24 @@ class ResultsView {
   _parentElement = document.querySelector(".results");
   _spinnerElement = document.querySelector(".spinner");
   _heroElement = document.querySelector(".button-wrapper");
+  _bookmarkIcon = document.querySelector(".results");
 
-  /**
-   *(Publisher-Subscriber-Pattern) Publisher for 'controlScrollTop'
-   * @param {function} handlerFunction the subscriber in controll.js
-   */
-  addHandlerScrollToTop(handlerFunction) {
+  constructor() {
+    //Responsible for the ''to-the-top''-button
     document
       .querySelector(".to-the-top-button")
       .addEventListener("click", function () {
-        handlerFunction();
+        document
+          .querySelector(".button-wrapper")
+          .scrollIntoView({ behavior: "smooth" });
       });
+  }
+
+  //(Publisher-Subscriber-Pattern with controller.controlBookmarks
+  addHandlerBookmark(handlerFunction) {
+    this._bookmarkIcon.addEventListener("click", function (e) {
+      handlerFunction(e);
+    });
   }
 
   //renders the error-message
@@ -102,18 +109,23 @@ class ResultsView {
    * @param {Array} data array with the information of the result.
    * @param {string} searchQuery correct category.
    */
-  _renderResults(data, searchQuery) {
+  _renderResults(data, searchQuery, bookmark) {
     let html = "";
 
     if (searchQuery === "weapons" || searchQuery === "shields") {
       html += `
-      <div class="search-result-weapon">
+      <div class="search-result-weapon" data-search-query=${searchQuery}>
     <div class="result-img-box-weapon">
       <img class="result-img-weapon" src=${data.image} />
     </div>
 
     <div class='weapon-name'>
-      <h3 class="name">${data.name}</h3>
+      <h3 class="name" data-id=${data.id}>${data.name}</h3>
+      <svg xmlns="http://www.w3.org/2000/svg" class="bookmark-icon ${
+        data.bookmark === true ? "bookmark-icon-fill" : ""
+      }"  fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+    </svg>
     </div>
 
     <div class="result-information-weapon">
@@ -263,13 +275,18 @@ class ResultsView {
 
     if (searchQuery === "armors") {
       html += `
-      <div class="search-result-weapon">
+      <div class="search-result-weapon" data-search-query=${searchQuery}>
     <div class="result-img-box-weapon">
       <img class="result-img-weapon" src=${data.image} />
     </div>
     
     <div class='weapon-name'>
-      <h3 class="name">${data.name}</h3>
+      <h3 class="name" data-id=${data.id}>${data.name}</h3>
+      <svg xmlns="http://www.w3.org/2000/svg" class="bookmark-icon ${
+        data.bookmark === true ? "bookmark-icon-fill" : ""
+      }"  fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+    </svg>
     </div>
 
     <div class="result-information-weapon">
@@ -316,19 +333,19 @@ class ResultsView {
         </p>
         <p class="armor-flex-2">
           <span >Robustness:</span>
-          <span>${data.resistance[0].amount}</span>
+          <span>${data.resistance[1].amount}</span>
         </p>
         <p class="armor-flex-2">
           <span >Focus:</span>
-          <span>${data.resistance[0].amount}</span>
+          <span>${data.resistance[2].amount}</span>
         </p>
         <p class="armor-flex-2">
           <span >Vitality:</span>
-          <span>${data.resistance[0].amount}</span>
+          <span>${data.resistance[3].amount}</span>
         </p>
         <p class="armor-flex-2">
           <span >Poise:</span>
-          <span>${data.resistance[0].amount}</span>
+          <span>${data.resistance[4].amount}</span>
         </p>
       </div>
     </div>
@@ -357,13 +374,18 @@ class ResultsView {
 
     if (searchQuery === "items") {
       html += `
-      <div class="search-result-ashes">
+    <div class="search-result-ashes" data-search-query=${searchQuery}>
       <div class="result-img-box-spirit">
         <img class="result-img-spirit" src=${data.image} />
       </div>
     
       <div class='spirit-name'>
-        <h3 class="name">${data.name}</h3>
+        <h3 class="name" data-id=${data.id}>${data.name}</h3>
+        <svg xmlns="http://www.w3.org/2000/svg" class="bookmark-icon ${
+          data.bookmark === true ? "bookmark-icon-fill" : ""
+        }"  fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+     </svg>
       </div>
 
       <div class='spirit-name'>
@@ -394,13 +416,18 @@ class ResultsView {
 
     if (searchQuery === "talismans") {
       html += `
-      <div class="search-result-talisman">
+      <div class="search-result-talisman" data-search-query=${searchQuery}>
       <div class="result-img-box-spirit">
         <img class="result-img-spirit" src=${data.image} />
       </div>
     
       <div class='spirit-name'>
-        <h3 class="name">${data.name}</h3>
+        <h3 class="name" data-id=${data.id}>${data.name}</h3>
+        <svg xmlns="http://www.w3.org/2000/svg" class="bookmark-icon ${
+          data.bookmark === true ? "bookmark-icon-fill" : ""
+        }"  fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+    </svg>
       </div>
     
       <div class="effect-talisman">
@@ -423,13 +450,18 @@ class ResultsView {
 
     if (searchQuery === "npcs") {
       html += `
-      <div class="search-result-talisman">
-      <div class="result-img-box-spirit">
+      <div class="search-result-talisman" data-search-query=${searchQuery}>
+      <div class="result-img-box-npc">
         <img class="result-img-creature" src=${data.image} />
       </div>
     
       <div class='spirit-name'>
-        <h3 class="name-npcs">${data.name} (${data.role})</h3>
+        <h3 class="name-npcs" data-id=${data.id}>${data.name}</h3>
+      <svg xmlns="http://www.w3.org/2000/svg" class="bookmark-icon ${
+        data.bookmark === true ? "bookmark-icon-fill" : ""
+      }"  fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+      </svg>
       </div>
     
       <div class="effect-talisman">
@@ -452,13 +484,18 @@ class ResultsView {
 
     if (searchQuery === "ammos") {
       html += `
-      <div class="search-result-boss">
+      <div class="search-result-boss" data-search-query=${searchQuery}>
   <div class="result-img-box-spirit">
     <img class="result-img-ash" src=${data.image} />
   </div>
 
   <div class='spirit-name'>
-    <h3 class="name">${data.name}</h3>
+    <h3 class="name" data-id=${data.id}>${data.name}</h3>
+    <svg xmlns="http://www.w3.org/2000/svg" class="bookmark-icon ${
+      data.bookmark === true ? "bookmark-icon-fill" : ""
+    }"  fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+    </svg>
   </div>
 
   <div class="result-information-ash">
@@ -511,13 +548,18 @@ class ResultsView {
 
     if (searchQuery === "spirits") {
       html += `
-      <div class="search-result-spirit">
+      <div class="search-result-spirit" data-search-query=${searchQuery}>
   <div class="result-img-box-spirit">
     <img class="result-img-spirit" src=${data.image} />
   </div>
 
   <div class='spirit-name'>
-    <h3 class="name">${data.name}</h3>
+    <h3 class="name-spirit" data-id=${data.id}>${data.name}</h3>
+    <svg xmlns="http://www.w3.org/2000/svg" class="bookmark-icon ${
+      data.bookmark === true ? "bookmark-icon-fill" : ""
+    }"  fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+      </svg>
   </div>
 
   <div class="result-information-spirit">
@@ -553,7 +595,7 @@ class ResultsView {
 
     if (searchQuery === "locations") {
       html += `
-        <div class="search-result">
+        <div class="search-result" data-search-query=${searchQuery}>
         <div class="result-img-box">
         <img
         class="result-img-big"
@@ -562,9 +604,14 @@ class ResultsView {
         </div>
       
         <div class="result-information-locations">
-        <h3 class="result-name-locations">
+        <h3 class="result-name-locations" data-id=${data.id}>
         <span class="result-info-locations">${data.name}</span>
         </h3>
+        <svg xmlns="http://www.w3.org/2000/svg" class="bookmark-icon ${
+          data.bookmark === true ? "bookmark-icon-fill" : ""
+        }"  fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+        </svg>
         </div>
         
         <div class="result-item_description">
@@ -580,18 +627,25 @@ class ResultsView {
 
     if (searchQuery === "classes") {
       html += `
-      <div class="search-result-classes">
+      <div class="search-result-classes" data-search-query=${searchQuery}>
       <div class="result-img-box-classes">
          <img
-          class="result-img"                                                      src=${data.image}
+          class="result-img"                                                      src=${
+            data.image
+          }
              />
       </div>
          
          <div class="result-information-classes">
-           <h3 class="result-name-classes">
+           <h3 class="result-name-classes" data-id=${data.id}>
              <span class="result-property">name:</span>
              <span class="result-info-classes">${data.name}</span>
            </h3>
+           <svg xmlns="http://www.w3.org/2000/svg" class="bookmark-icon ${
+             data.bookmark === true ? "bookmark-icon-fill" : ""
+           }"  fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+        </svg>
            <h3 class="result-name-classes result-name-format">
              <span class="result-property">level:</span>
              <span class="result-info">${data.stats.level}</span>
@@ -645,13 +699,18 @@ class ResultsView {
 
     if (searchQuery === "sorceries" || searchQuery === "incantations") {
       html += `
-      <div class="search-result-magic">
+      <div class="search-result-magic" data-search-query=${searchQuery}>
   <div class="result-img-box-magic">
     <img class="result-img-magic" src=${data.image} />
   </div>
 
   <div class='magic-name'>
-    <h3 class="name">${data.name}</h3>
+    <h3 class="name" data-id=${data.id}>${data.name}</h3>
+    <svg xmlns="http://www.w3.org/2000/svg" class="bookmark-icon ${
+      data.bookmark === true ? "bookmark-icon-fill" : ""
+    }"  fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+        </svg>
   </div>
 
   <div class="result-information-magic">
@@ -704,13 +763,18 @@ class ResultsView {
 
     if (searchQuery === "bosses") {
       html += `
-      <div class="search-result-boss">
+      <div class="search-result-boss" data-search-query=${searchQuery}>
   <div class="result-img-box-spirit">
     <img class="result-img-creature" src=${data.image} />
   </div>
 
   <div class='spirit-name'>
-    <h3 class="name">${data.name}</h3>
+    <h3 class="name" data-id=${data.id}>${data.name}</h3>
+    <svg xmlns="http://www.w3.org/2000/svg" class="bookmark-icon ${
+      data.bookmark === true ? "bookmark-icon-fill" : ""
+    }"  fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+        </svg>
   </div>
   
   
@@ -747,13 +811,18 @@ class ResultsView {
 
     if (searchQuery === "creatures") {
       html += `
-      <div class="search-result-spirit">
+      <div class="search-result-classes" data-search-query=${searchQuery}>
   <div class="result-img-box-spirit">
     <img class="result-img-creature" src=${data.image} />
   </div>
 
   <div class='spirit-name'>
-    <h3 class="name">${data.name}</h3>
+    <h3 class="name" data-id=${data.id}>${data.name}</h3>
+    <svg xmlns="http://www.w3.org/2000/svg" class="bookmark-icon ${
+      data.bookmark === true ? "bookmark-icon-fill" : ""
+    }"  fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+        </svg>
   </div>
 
   <div class="result-information-spirit">
@@ -783,13 +852,18 @@ class ResultsView {
 
     if (searchQuery === "ashes") {
       html += `
-      <div class="search-result-ashes">
+      <div class="search-result-ashes" data-search-query=${searchQuery}>
   <div class="result-img-box-spirit">
     <img class="result-img-ash" src=${data.image} />
   </div>
 
   <div class='spirit-name'>
-    <h3 class="name">${data.name}</h3>
+    <h3 class="name-ashes" data-id=${data.id}>${data.name}</h3>
+    <svg xmlns="http://www.w3.org/2000/svg" class="bookmark-icon ${
+      data.bookmark === true ? "bookmark-icon-fill" : ""
+    }"  fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+        </svg>
   </div>
 
   <div class="result-information-ash">

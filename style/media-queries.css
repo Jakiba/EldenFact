@@ -43,6 +43,21 @@
     font-size: 5rem;
     line-height: 10rem;
   }
+
+  .button-wrapper {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  .button-show {
+    padding: 1rem 1.5rem;
+    font-size: 4rem;
+  }
+
+  #quotes-search {
+    font-size: 4rem;
+    padding: 2.5rem;
+    width: 90rem;
+  }
 }
 
 @media (max-width: 43rem) {
@@ -65,7 +80,7 @@
   }
 
   .nav-item_link {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 
   .introduction {
@@ -75,6 +90,17 @@
 
   .button-wrapper {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .button-show {
+    padding: 1rem 1.5rem;
+    font-size: 6rem;
+  }
+
+  #quotes-search {
+    font-size: 4.5rem;
+    padding: 3rem;
+    width: 100rem;
   }
 }
 
@@ -93,12 +119,27 @@
   }
 
   .nav-item_link {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 
   .introduction {
     font-size: 8rem;
     line-height: 12rem;
+  }
+
+  .button-wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .button-show {
+    padding: 1rem 1.5rem;
+    font-size: 6rem;
+  }
+
+  #quotes-search {
+    font-size: 4.5rem;
+    padding: 3rem;
+    width: 100rem;
   }
 }
 
@@ -122,11 +163,26 @@
   }
 
   .nav-item_link {
-    font-size: 6rem;
+    font-size: 4rem;
   }
 
   .introduction {
     font-size: 9rem;
     line-height: 14rem;
+  }
+
+  .button-wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .button-show {
+    padding: 1rem 1.5rem;
+    font-size: 6rem;
+  }
+
+  #quotes-search {
+    font-size: 4.5rem;
+    padding: 3rem;
+    width: 100rem;
   }
 }

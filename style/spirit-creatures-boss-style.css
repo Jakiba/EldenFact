@@ -53,7 +53,7 @@
   background-color: #222;
   color: white;
   width: 40rem;
-  height: 80rem;
+  height: 95rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -74,7 +74,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
+
+  overflow: hidden;
+}
+
+.result-img-box-npc {
+  width: 100%;
+  height: 40%;
+  border-bottom: 1px solid #999;
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-bottom: 2rem; */
 
   overflow: hidden;
 }
@@ -101,7 +114,7 @@
 }
 
 .result-img-ash {
-  width: 70%;
+  width: 60%;
   height: 100%;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
@@ -113,24 +126,52 @@
 
 .spirit-name {
   width: 100%;
-  height: 5%;
+  height: 10%;
   border-bottom: 1px solid #999;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   padding: 2rem 1rem;
   margin-bottom: 2rem;
+  gap: 1rem;
+  /* background-color: red; */
 }
 
 .name {
   font-size: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+.name-ashes {
+  font-size: 1.7rem;
+}
+
+.name-spirit {
+  font-size: 1.8rem;
+}
+
+.bookmark-icon {
+  width: 3rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.bookmark-icon-fill {
+  fill: white;
+}
+
+.bookmark-icon:hover {
+  transform: scale(1.1);
+}
+
+.nav-bookmark-icon {
+  width: 2rem;
 }
 
 .name-npcs {
   text-align: center;
   font-size: 2rem;
-  padding-bottom: 2rem;
+  /* padding-bottom: 2rem; */
 }
 
 .boss-health {
@@ -250,7 +291,7 @@
 
 .effect-spirit {
   width: 100%;
-  height: 10%;
+  height: 15%;
   border-bottom: 1px solid #999;
   display: flex;
   flex-direction: column;
